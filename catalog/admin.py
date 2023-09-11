@@ -5,10 +5,10 @@ from catalog.models import Product, Category
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('id', 'product_name', 'price', 'category_catalog')
-    list_filter = ('category_catalog',)
+    list_display = ('id', 'name', 'price', 'category')
+    list_filter = ('category',)
 
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('id', 'category_name',)
+    list_display = ('id', 'name',)
