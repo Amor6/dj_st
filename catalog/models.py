@@ -1,4 +1,3 @@
-
 from django.db import models
 
 NULLABLE = {'blank': True, 'null': True}
@@ -16,7 +15,7 @@ class Category(models.Model):
         ordering = ('name',)
 
 class Product(models.Model):
-    name = models.CharField(max_length=250, verbose_name='Наименование')
+    name_prod = models.CharField(max_length=250, verbose_name='Наименование')
     information = models.TextField(max_length=250, verbose_name='Описание')
     image = models.ImageField(upload_to='catalog/', **NULLABLE, verbose_name='Изображение')
     category = models.ForeignKey('Category', on_delete=models.CASCADE, verbose_name='Категория')
@@ -25,9 +24,9 @@ class Product(models.Model):
     date_change = models.DateTimeField(auto_now=True, verbose_name='Дата последнего изменения')
 
     def __str__(self):
-        return self.name
+        return self.name_prod
 
     class Meta:
         verbose_name = 'продукт'
         verbose_name_plural = 'продукты'
-        ordering = ('name',)
+        ordering = ('name_prod',)

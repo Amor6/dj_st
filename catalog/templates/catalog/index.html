@@ -1,0 +1,13 @@
+{% extends 'catalog/home.html' %}
+
+{% block content%}
+<main class="row">
+            <div class="row text-center">
+                {% for object in object_list %}
+                    {% include 'catalog/includes/inc_cat.html' %}
+
+                {% endfor %}
+
+            </div>
+
+{% endblock %}
